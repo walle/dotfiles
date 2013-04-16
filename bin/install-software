@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+
+if ! hash brew 2>/dev/null; then
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+fi
+
+brew install bash
+brew install bash-completion
+brew install gcc
+brew install git
+brew install git-utils
+brew install curl
+brew install wget
+brew install node
+brew install openssl
+brew install ssh-copy-id
+
+if ! hash rvm 2>/dev/null; then
+  \curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
+  source $HOME/.rvm/scripts/rvm
+fi
+
+gem install bundler
+gem install rails
+gem install gimli
+gem install gas
+
+# if pkg : sudo installer -package /path/to/package -target "/Volumes/Macintosh HD"
+install_dmg() {
+  mkdir "tmp" &&
+  wget -O "tmp/$2" $1 &&
+  hdiutil mount "tmp/$2" &&
+  sudo cp -R "/Volumes/$3/$4" /Applications &
+  hdiutil unmount "/Volumes/$3" &&
+  rm -rf "tmp/"
+}
+
+install_dmg "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203026.dmg" "sublime.dmg" "Sublime Text" "Sublime Text.app"
