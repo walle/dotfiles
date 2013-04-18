@@ -17,3 +17,6 @@
   autocrlf = input
   editor = vi
   excludesfile = ~/.gitignore
+
+[url "git@github.com"]
+  insteadOf = gh
