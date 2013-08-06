@@ -14,11 +14,10 @@ brew install wget
 brew install node
 brew install openssl
 brew install ssh-copy-id
+brew install chruby
+brew install ruby-install
 
-if ! hash rvm 2>/dev/null; then
-  \curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
-  source $HOME/.rvm/scripts/rvm
-fi
+ruby-install ruby
 
 gem install bundler
 gem install rails

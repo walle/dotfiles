@@ -4,7 +4,4 @@ brew update
 brew upgrade
 brew cleanup
 
-\curl -L https://get.rvm.io | bash -s stable
-rvm reload
-
 gem update

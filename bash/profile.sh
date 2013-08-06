@@ -1,8 +1,9 @@
 # Add bin to path
 export PATH=~/bin:$PATH
 
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+# chruby
+source /usr/local/share/chruby/chruby.sh
+chruby ruby-2.0
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
