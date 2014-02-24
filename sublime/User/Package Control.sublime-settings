@@ -1,16 +1,19 @@
 {
+	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"All Autocomplete",
 		"CoffeeScript",
 		"DashDoc",
 		"GitGutter",
+		"GoSublime",
 		"Inc-Dec-Value",
 		"jQuery",
 		"LESS",
 		"Package Control",
 		"Ruby on Rails snippets",
-		"ruby-slim.tmbundle",
+		"Ruby Slim",
+		"SCSS",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter"

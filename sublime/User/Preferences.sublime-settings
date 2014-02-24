@@ -1,9 +1,10 @@
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Color Scheme - Default/Cobalt.tmTheme",
-	"font_face": "Monaco",
-	"font_size": 14,
+	"color_scheme": "Packages/User/cobalt2 (SL).tmTheme",
+	"draw_white_space": "all",
+	"font_face": "Inconsolata",
+	"font_size": 16,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -11,9 +12,9 @@
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"tab_size": 2,
+	"theme": "Cobalt2.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
-	"word_wrap": false,
-	"draw_white_space": "all"
+	"word_wrap": false
 }
