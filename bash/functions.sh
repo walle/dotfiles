@@ -1,15 +1,12 @@
 # Jump to code
-
 c() { cd ~/gitrepositories/$1; }
 _c() {
-  local cur
-  COMPREPLY=()
-  cur="${COMP_WORDS[COMP_CWORD]}"
+  local cur=${COMP_WORDS[COMP_CWORD]}
 
-  local tags=$(for t in `ls ~/gitrepositories | \
-                      awk '{print $1}'`; do echo ${t}; done)
-  COMPREPLY=($(compgen -W "${tags}" $cur))
+  COMPREPLY=($(cd ~/gitrepositories; compgen -o dirnames -S '/' -f -- $cur))
 }
+
+complete -o nospace -F _c c
 
 complete -F _c c
 
