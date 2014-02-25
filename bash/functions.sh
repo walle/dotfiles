@@ -8,8 +8,6 @@ _c() {
 
 complete -o nospace -F _c c
 
-complete -F _c c
-
 # Create a new directory and enter it
 function mkd() {
   mkdir -p "$@" && cd "$@"
