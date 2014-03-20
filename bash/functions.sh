@@ -43,7 +43,7 @@ g() {
 _g() {
   local cur=${COMP_WORDS[COMP_CWORD]}
 
-  COMPREPLY=($(cd $CODE_DIR; compgen -o dirnames -S '/' -f -- $cur))
+  COMPREPLY=($(cd $CODE_DIR; compgen -o dirnames -S -f -- $cur))
 }
 
 complete -o nospace -F _g g
