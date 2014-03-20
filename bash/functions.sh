@@ -1,12 +1,52 @@
+# Define code directory
+CODE_DIR=~/gitrepositories
+
 # Jump to code
-c() { cd ~/gitrepositories/$1; }
+c() { cd $CODE_DIR/$1; }
 _c() {
   local cur=${COMP_WORDS[COMP_CWORD]}
 
-  COMPREPLY=($(cd ~/gitrepositories; compgen -o dirnames -S '/' -f -- $cur))
+  COMPREPLY=($(cd $CODE_DIR; compgen -o dirnames -S '/' -f -- $cur))
 }
 
 complete -o nospace -F _c c
+
+# Use a golang project, or create if not present
+# Run this to start working on a go project
+g() {
+  # Check so we have just a project name as parameter
+  if [[ "$#" -ne 1 ]]; then
+    echo "Enter a project name"
+  else
+    project_name=$1
+    workspace="$HOME/${project_name}_workspace"
+    project_code="$workspace/src/github.com/walle/$project_name"
+
+    # Create the workspace if it doesn't exist
+    if [[ ! -d $workspace ]]; then
+      git init $project_code
+    fi
+
+    # Link the project source to the main code dir
+    if [[ ! -d $CODE_DIR/$project_name ]]; then
+      ln -s $project_code $CODE_DIR/$project_name
+    fi
+
+    # Setup gopath temporarily for this project
+    export GOPATH=$workspace
+    export PATH=$PATH:$GOPATH/bin
+
+    # Jump to the code
+    c $project_name
+  fi
+}
+_g() {
+  local cur=${COMP_WORDS[COMP_CWORD]}
+
+  COMPREPLY=($(cd $CODE_DIR; compgen -o dirnames -S '/' -f -- $cur))
+}
+
+complete -o nospace -F _g g
 
 # Create a new directory and enter it
 function mkd() {
