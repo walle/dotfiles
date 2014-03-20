@@ -11,7 +11,7 @@
   rename = copy
 
 [push]
-  default = current
+  default = simple
 
 [core]
   autocrlf = input
