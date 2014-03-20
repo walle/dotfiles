@@ -6,6 +6,7 @@
 		"CoffeeScript",
 		"DashDoc",
 		"GitGutter",
+		"GoImports",
 		"GoSublime",
 		"Inc-Dec-Value",
 		"jQuery",
