@@ -34,7 +34,7 @@ g() {
 
     # Setup gopath temporarily for this project
     export GOPATH=$workspace
-    export PATH=$PATH:$GOPATH/bin
+    export PATH=$GOPATH/bin:$PATH
 
     # Jump to the code
     c $project_name
