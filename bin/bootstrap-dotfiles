@@ -12,26 +12,6 @@ configure_osx() {
   sh osx/config.sh
 }
 
-configure_sublime() {
-  sublime2_user_dir="$HOME/Library/Application Support/Sublime Text\ 2/Packages/User/"
-  sublime3_user_dir="$HOME/Library/Application Support/Sublime Text\ 3/Packages/User/"
-  if [ -e "$sublime2_user_dir" ]
-  then
-    mv "$sublime2_user_dir" "${sublime2_user_dir}Backup"
-    ln -s $DOTFILES_DIR/sublime/User "$sublime2_user_dir"
-  else
-    echo "No Sublime Text 2 installation found"
-  fi
-
-  if [ -e "$sublime3_user_dir" ]
-  then
-    mv "$sublime3_user_dir" "${sublime3_user_dir}Backup"
-    ln -s $DOTFILES_DIR/sublime/User "$sublime3_user_dir"
-  else
-    echo "No Sublime Text 3 installation found"
-  fi
-}
-
 echo "Bootstrapping dotfiles"
 
 setup_bin
@@ -42,7 +22,6 @@ sh bin/update-software
 
 if [ "$(uname -s)" == "Darwin" ]
 then
-  configure_sublime
   configure_osx
 fi
 
