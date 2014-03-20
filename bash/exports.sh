@@ -22,3 +22,7 @@ export LC_CTYPE="en_US.UTF-8"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
+
+# Setup standard gopath
+export GOPATH=$HOME/go_workspace
+export PATH=$PATH:$GOPATH/bin
