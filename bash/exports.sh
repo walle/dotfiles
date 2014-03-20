@@ -26,3 +26,6 @@ export MANPAGER="less -X"
 # Setup standard gopath
 export GOPATH=$HOME/go_workspace
 export PATH=$PATH:$GOPATH/bin
+
+# Make sure to use homebrew before standard
+export PATH=/usr/local/bin:$PATH
