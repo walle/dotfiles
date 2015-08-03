@@ -1,0 +1,9 @@
+# Setup gopath
+export GOPATH=$HOME/go_workspace
+export PATH=$GOPATH/bin:$PATH
+
+# Brew path
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH
+
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";

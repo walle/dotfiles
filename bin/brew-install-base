@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Check for Homebrew,
+# Install if we don't have it
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Make sure we’re using the latest Homebrew.
+brew update
+
+# Upgrade any already-installed formulae.
+brew upgrade --all
+
+# Install common software
+brew install coreutils
+brew install moreutils
+brew install findutils
+brew install gnu-sed --with-default-names
+brew install bash
+brew install bash-completion2
+brew install wget --with-iri
+brew install vim --override-system-vi
+brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
+brew install ack
+brew install git
+brew install ssh-copy-id
+brew install tree
+brew install caskroom/cask/brew-cask
+brew cask install --appdir="~/Applications" java
+brew cask install --appdir="~/Applications" iterm2
+brew install go
+brew cask install --appdir="~/Applications" flux
+brew cask install --appdir="~/Applications" spotify
+brew install tmux
+brew install reattach-to-user-namespace
+brew install bash-git-prompt
+brew install offlineimap
+brew install sqlite
+brew install urlview
+brew install msmtp
+brew install notmuch
+brew install gpg2
+
+brew tap kevwil/patches
+brew install kevwil/patches/mutt --with-sidebar-patch --with-pgp-verbose-mime-patch
+
+# Remove outdated versions from the cellar.
+brew cleanup

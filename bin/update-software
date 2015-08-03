@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-brew update
-brew upgrade
-brew cleanup
-
-gem update

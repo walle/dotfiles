@@ -1,0 +1,50 @@
+[general]
+ui = TTYUI
+accounts = fredrik_wallgren_gmail, fredrik_sayon
+pythonfile = ~/.mutt/offlineimap.py
+fsync = False
+
+[Account fredrik_wallgren_gmail]
+localrepository = fredrik_wallgren_gmail_local
+remoterepository = fredrik_wallgren_gmail_remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Account fredrik_sayon]
+localrepository = fredrik_sayon_local
+remoterepository = fredrik_sayon_remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository fredrik_wallgren_gmail_local]
+type = Maildir
+localfolders = ~/Mail/fredrik_wallgren_gmail
+nametrans = get_remote_name
+
+[Repository fredrik_wallgren_gmail_remote]
+maxconnections = 1
+type = Gmail
+sslcacertfile = ~/.mutt/ca-certificates.pem
+remoteuser = fredrik.wallgren@gmail.com
+remotepasseval = get_password(account="fredrik.wallgren@gmail.com", server="imap.gmail.com")
+realdelete = no
+nametrans = get_local_name
+folderfilter = is_included
+
+[Repository fredrik_sayon_local]
+type = Maildir
+localfolders = ~/Mail/fredrik_sayon
+nametrans = get_remote_name
+
+
+[Repository fredrik_sayon_remote]
+maxconnections = 1
+type = IMAP
+sslcacertfile = ~/.mutt/ca-certificates.pem
+remoteuser = fredrik@sayon.se
+remotehost = imap.zoho.com
+remoteport = 993
+ssl = yes
+remotepasseval = get_password(account="fredrik@sayon.se", server="imap.zoho.com")
+realdelete = no
+

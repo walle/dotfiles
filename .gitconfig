@@ -1,0 +1,22 @@
+[user]
+	name = Fredrik Wallgren
+	email = fredrik.wallgren@gmail.com
+	signingkey = 05BDC53E
+
+[color]
+  diff   = auto
+  branch = auto
+  status = auto
+
+[diff]
+  rename = copy
+
+[push]
+  default = simple
+
+[core]
+  autocrlf = input
+  excludesfile = ~/.global_gitignore
+
+[url "git@github.com"]
+  insteadOf = gh

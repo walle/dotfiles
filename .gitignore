@@ -1,5 +1,1 @@
-tmp/
-*.cache
-*.exe
-log.txt
-.last-run
+*

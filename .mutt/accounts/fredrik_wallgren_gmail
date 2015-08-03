@@ -1,0 +1,30 @@
+# Account Settings ------------------------------
+
+set from      = "fredrik.wallgren@gmail.com"
+set sendmail  = "/usr/local/bin/msmtp -a fredrik_wallgren_gmail"
+set signature = ~/.mutt/signature
+
+# GPG
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = 05BDC53E
+set crypt_autosign = no
+set crypt_replyencrypt = yes
+set crypt_replysignencrypted=yes
+set crypt_verify_sig=yes
+
+# Default inbox.
+set spoolfile = "+fredrik_wallgren_gmail/INBOX"
+
+# Archive mail from both index and pager
+macro index A ":set confirmappend=no delete=yes\n<save-message>=fredrik_wallgren_gmail/archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro pager A ":set confirmappend=no delete=yes\n<save-message>=fredrik_wallgren_gmail/archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+
+# Other special folders.
+set mbox      = "+fredrik_wallgren_gmail/archive"
+set postponed = "+fredrik_wallgren_gmail/drafts"
+unset record
+
+# Search the mailbox
+macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py -p fredrik_wallgren_gmail ~/Mail/fredrik_wallgren_gmail/temporary/search<enter><change-folder-readonly>+fredrik_wallgren_gmail/temporary/search<enter>" "search mail (using notmuch)"
+
+color status yellow default

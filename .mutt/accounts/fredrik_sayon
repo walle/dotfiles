@@ -1,0 +1,30 @@
+# Account Settings ------------------------------
+
+set from      = "fredrik@sayon.se"
+set sendmail  = "/usr/local/bin/msmtp -a fredrik_sayon"
+set signature = ~/.mutt/sayon_signature
+
+# GPG
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = 5CF23833
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+set crypt_replysignencrypted=yes
+set crypt_verify_sig=yes
+
+# Default inbox.
+set spoolfile = "+fredrik_sayon/INBOX"
+
+# Other special folders.
+set mbox      = "+fredrik_sayon/Archive"
+set postponed = "+fredrik_sayon/Drafts"
+set record    = "+fredrik_sayon/sent_local"
+
+# Search the mailbox
+macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py -G -p fredrik_sayon ~/Mail/fredrik_sayon/temporary/search<enter><change-folder-readonly>+fredrik_sayon/temporary/search<enter>" "search mail (using notmuch)"
+
+# Archive mail from both index and pager
+macro index A ":set confirmappend=no delete=yes\n<save-message>=fredrik_sayon/Archives.2015\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro pager A ":set confirmappend=no delete=yes\n<save-message>=fredrik_sayon/Archives.2015\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+
+color status green default
