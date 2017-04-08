@@ -1,7 +1,7 @@
 PROMPT_DIRTRIM=2
 Color_Off="\[\033[0m\]" # Text Reset
-Green="\[\033[0;32m\]" # Green
-Yellow="\[\033[0;33m\]" # Yellow
+Green="\[\033[0;92m\]" # Green
+Yellow="\[\033[0;93m\]" # Yellow
 IRed="\[\033[0;91m\]" # Red
 TIME="\t"
 PathShort="\w"

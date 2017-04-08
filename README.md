@@ -4,7 +4,8 @@ Configurations for used software.
 
 ## Installation
 
-Clone to home directory. Use `git add -f` to track new files.
+Run the `bin/install.sh` script. This will overwrite previous configurations
+without prompting.
 
 ## Software
 
@@ -25,8 +26,7 @@ Contains configurations for
 The dotfiles are only tested on osx right now, but aim to be fully functional
 on linux too.
 
-Iterm2 with the Gotham theme (https://github.com/whatyouhide/gotham-contrib)
-is used as terminal emulator.
+Iterm2 with the gruvbox-dark.itermcolors, install it manually.
 
 ## Bash
 

@@ -1,0 +1,11 @@
+{
+  "autobuild": true,
+  "close-timeout": 1800,
+  "custom-pkg-prefix": "",
+  "custom-vendor-dir": "",
+  "force-debug-output": "",
+  "lib-path": "",
+  "package-lookup-mode": "go",
+  "propose-builtins": true,
+  "unimported-packages": true
+}

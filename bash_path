@@ -1,5 +1,5 @@
 # Setup gopath
-export GOPATH=$HOME/go_workspace
+export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
 # Brew path

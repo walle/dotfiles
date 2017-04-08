@@ -1,7 +1,5 @@
-[user]
-	name = Fredrik Wallgren
-	email = fredrik.wallgren@gmail.com
-	signingkey = 05BDC53E
+[include]
+  path = .gitconfig_extra
 
 [color]
   diff   = auto
@@ -14,9 +12,15 @@
 [push]
   default = simple
 
+[grep]
+  linenumber = true
+
+[commit]
+	verbose = true
+
 [core]
   autocrlf = input
-  excludesfile = ~/.global_gitignore
+  excludesfile = ~/.gitignore
 
 [url "git@github.com"]
   insteadOf = gh
