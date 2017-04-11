@@ -6,9 +6,6 @@ for file in ~/.bash_{path,prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-# vim mode
-set -o vi
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
