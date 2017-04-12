@@ -17,6 +17,9 @@ Plug 'honza/vim-snippets'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-go', { 'do': 'make'}
+  Plug 'jodosha/vim-godebug'
+  let g:deoplete#enable_at_startup = 1
 else
   Plug 'Shougo/neocomplete.vim'
   Plug 'Shougo/vimproc' , { 'do': 'make'}
