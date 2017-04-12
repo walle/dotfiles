@@ -448,6 +448,4 @@ if exists('+colorcolumn')
   nnoremap <Leader>8 :call <SID>ToggleColorColumn()<cr>
 endif
 
-let g:rehash256 = 1
-
 " vim:ts=2:sw=2:et
